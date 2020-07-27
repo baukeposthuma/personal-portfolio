@@ -1,0 +1,1 @@
+function r(n){/in/.test(document.readyState)?setTimeout("r("+n+")",9):n()}function flickity(){const n=document.querySelector(".main-carousel"),t=new Flickity(n,{cellAlign:"center",contain:!0,draggable:">1"});t.cells.length<1&&t.unbindDrag()}r(function(){flickity()});

@@ -1,0 +1,422 @@
+/* Flexbox SASS Gridsystem */
+/* Coded by: Bauke Posthuma */
+
+/* Flexbox grid settings */
+$gap-width: 2rem
+
+/* Breakpoints */
+
+// Small devices (landscape phones, 576px and up)
+$breakpoint-sm: 36rem
+
+// Medium devices (tablets, 768px and up)
+$breakpoint-md: 48rem
+
+// Large devices (desktops, 992px and up)
+$breakpoint-lg: 62rem
+
+// Extra large devices (large desktops, 1200px and up)
+$breakpoint-xl: 75rem
+
+
+// Row
+.row
+    display: flex
+    flex-direction: row
+    flex-wrap: wrap
+    margin-left: calc(-#{$gap-width} / 2)
+    margin-right: calc(-#{$gap-width} / 2)
+
+    &:first-child
+        padding-left: 0
+
+    &:last-child
+        padding-right: 0
+
+    [class*='col-']
+        padding-left: calc(#{$gap-width} / 2)
+        padding-right: calc(#{$gap-width} / 2)
+
+    // Columns mixins
+    @mixin columns($columns)
+        flex-basis: calc( (100% / 12) * #{$columns} )
+        max-width: calc( (100% / 12) * #{$columns} )
+
+    @mixin offset($columns)
+        margin-left: calc( (100% / 12) * #{$columns} )
+
+    // Extra small devices (portrait phones, less than 576px)
+    @media (max-width: ($breakpoint-sm - 0.02))
+
+        .col-xs-1
+            @include columns(1)
+
+        .col-xs-2
+            @include columns(2)
+
+        .col-xs-3
+            @include columns(3)
+
+        .col-xs-4
+            @include columns(4)
+
+        .col-xs-5
+            @include columns(5)
+
+        .col-xs-6
+            @include columns(6)
+
+        .col-xs-7
+            @include columns(7)
+
+        .col-xs-8
+            @include columns(8)
+
+        .col-xs-9
+            @include columns(9)
+
+        .col-xs-10
+            @include columns(10)
+
+        .col-xs-11
+            @include columns(11)
+
+        .col-xs-12
+            @include columns(12)
+
+        // Offset
+        .offset-xs-0
+            @include offset(0)
+
+        .offset-xs-1
+            @include offset(1)
+
+        .offset-xs-2
+            @include offset(2)
+
+        .offset-xs-3
+            @include offset(3)
+
+        .offset-xs-4
+            @include offset(4)
+
+        .offset-xs-5
+            @include offset(5)
+
+        .offset-xs-6
+            @include offset(6)
+
+        .offset-xs-7
+            @include offset(7)
+
+        .offset-xs-8
+            @include offset(8)
+
+        .offset-xs-9
+            @include offset(9)
+
+        .offset-xs-10
+            @include offset(10)
+
+        .offset-xs-11
+            @include offset(11)
+
+    @media (min-width: $breakpoint-sm) and (max-width: ($breakpoint-md - 0.02))
+
+        .col-sm-1
+            @include columns(1)
+
+        .col-sm-2
+            @include columns(2)
+
+        .col-sm-3
+            @include columns(3)
+
+        .col-sm-4
+            @include columns(4)
+
+        .col-sm-5
+            @include columns(5)
+
+        .col-sm-6
+            @include columns(6)
+
+        .col-sm-7
+            @include columns(7)
+
+        .col-sm-8
+            @include columns(8)
+
+        .col-sm-9
+            @include columns(9)
+
+        .col-sm-10
+            @include columns(10)
+
+        .col-sm-11
+            @include columns(11)
+
+        .col-sm-12
+            @include columns(12)
+
+        // Offset
+        .offset-sm-0
+            @include offset(0)
+
+        .offset-sm-1
+            @include offset(1)
+
+        .offset-sm-2
+            @include offset(2)
+
+        .offset-sm-3
+            @include offset(3)
+
+        .offset-sm-4
+            @include offset(4)
+
+        .offset-sm-5
+            @include offset(5)
+
+        .offset-sm-6
+            @include offset(6)
+
+        .offset-sm-7
+            @include offset(7)
+
+        .offset-sm-8
+            @include offset(8)
+
+        .offset-sm-9
+            @include offset(9)
+
+        .offset-sm-10
+            @include offset(10)
+
+        .offset-sm-11
+            @include offset(11)
+
+    @media (min-width: $breakpoint-md) and (max-width: ($breakpoint-lg - 0.02))
+
+        .col-md-1
+            @include columns(1)
+
+        .col-md-2
+            @include columns(2)
+
+        .col-md-3
+            @include columns(3)
+
+        .col-md-4
+            @include columns(4)
+
+        .col-md-5
+            @include columns(5)
+
+        .col-md-6
+            @include columns(6)
+
+        .col-md-7
+            @include columns(7)
+
+        .col-md-8
+            @include columns(8)
+
+        .col-md-9
+            @include columns(9)
+
+        .col-md-10
+            @include columns(10)
+
+        .col-md-11
+            @include columns(11)
+
+        .col-md-12
+            @include columns(12)
+
+        // Offset
+        .offset-md-0
+            @include offset(0)
+
+        .offset-md-1
+            @include offset(1)
+
+        .offset-md-2
+            @include offset(2)
+
+        .offset-md-3
+            @include offset(3)
+
+        .offset-md-4
+            @include offset(4)
+
+        .offset-md-5
+            @include offset(5)
+
+        .offset-md-6
+            @include offset(6)
+
+        .offset-md-7
+            @include offset(7)
+
+        .offset-md-8
+            @include offset(8)
+
+        .offset-md-9
+            @include offset(9)
+
+        .offset-md-10
+            @include offset(10)
+
+        .offset-md-11
+            @include offset(11)
+
+    @media (min-width: $breakpoint-lg) and (max-width: ($breakpoint-xl - 0.02))
+
+        .col-lg-1
+            @include columns(1)
+
+        .col-lg-2
+            @include columns(2)
+
+        .col-lg-3
+            @include columns(3)
+
+        .col-lg-4
+            @include columns(4)
+
+        .col-lg-5
+            @include columns(5)
+
+        .col-lg-6
+            @include columns(6)
+
+        .col-lg-7
+            @include columns(7)
+
+        .col-lg-8
+            @include columns(8)
+
+        .col-lg-9
+            @include columns(9)
+
+        .col-lg-10
+            @include columns(10)
+
+        .col-lg-11
+            @include columns(11)
+
+        .col-lg-12
+            @include columns(12)
+
+        // Offset
+        .offset-lg-0
+            @include offset(0)
+
+        .offset-lg-1
+            @include offset(1)
+
+        .offset-lg-2
+            @include offset(2)
+
+        .offset-lg-3
+            @include offset(3)
+
+        .offset-lg-4
+            @include offset(4)
+
+        .offset-lg-5
+            @include offset(5)
+
+        .offset-lg-6
+            @include offset(6)
+
+        .offset-lg-7
+            @include offset(7)
+
+        .offset-lg-8
+            @include offset(8)
+
+        .offset-lg-9
+            @include offset(9)
+
+        .offset-lg-10
+            @include offset(10)
+
+        .offset-lg-11
+            @include offset(11)
+
+    @media (min-width: $breakpoint-xl)
+
+        .col-xl-1
+            @include columns(1)
+
+        .col-xl-2
+            @include columns(2)
+
+        .col-xl-3
+            @include columns(3)
+
+        .col-xl-4
+            @include columns(4)
+
+        .col-xl-5
+            @include columns(5)
+
+        .col-xl-6
+            @include columns(6)
+
+        .col-xl-7
+            @include columns(7)
+
+        .col-xl-8
+            @include columns(8)
+
+        .col-xl-9
+            @include columns(9)
+
+        .col-xl-10
+            @include columns(10)
+
+        .col-xl-11
+            @include columns(11)
+
+        .col-xl-12
+            @include columns(12)
+
+        // Offset
+        .offset-xl-0
+            @include offset(0)
+
+        .offset-xl-1
+            @include offset(1)
+
+        .offset-xl-2
+            @include offset(2)
+
+        .offset-xl-3
+            @include offset(3)
+
+        .offset-xl-4
+            @include offset(4)
+
+        .offset-xl-5
+            @include offset(5)
+
+        .offset-xl-6
+            @include offset(6)
+
+        .offset-xl-7
+            @include offset(7)
+
+        .offset-xl-8
+            @include offset(8)
+
+        .offset-xl-9
+            @include offset(9)
+
+        .offset-xl-10
+            @include offset(10)
+
+        .offset-xl-11
+            @include offset(11)

@@ -1,0 +1,313 @@
+//
+//    === HOME ===
+//
+#home
+
+    /* Header */
+    header
+        background-image: url('../img/background.png')
+        background-position: center
+        background-repeat: no-repeat
+        background-size: cover
+        color: $white
+        min-height: 80vh
+        display: flex
+        align-items: center
+
+        h1
+            font: $bold 3.25rem / 122% $font-stack
+            color: $white
+            letter-spacing: .075rem
+            margin: 1rem 0 1rem 0
+
+        .highlight
+            width: 6rem
+            height: .3125rem
+            margin-bottom: 1rem
+            background-color: $primary-color
+            display: block
+
+        p
+            margin: 0 0 2rem 0
+
+        a
+            color: $white
+            font: $medium 1rem / 100% $font-stack
+            text-decoration: none
+            display: inline-block
+            line-height: 150%
+            border-bottom: 2px solid $primary-color
+            margin-top: 1rem
+            white-space: nowrap
+
+        .new-line
+            display: block
+
+    /* @media (Larger than phablet [38rem]) */
+    @media #{$larger-than-phablet}
+
+        header
+
+            .wrapper
+                max-width: 880px
+
+            h1
+                font-size: 4.5rem
+                margin: 2rem 0 3.5rem 0
+
+            .highlight
+                height: 1rem
+                width: 8.875rem
+                min-width: 8.875rem
+                background-color: $primary-color
+                border: 0
+                margin-right: 2.5rem
+
+            .header-flex
+                display: flex
+                align-items: baseline
+
+    /* Portfolio masonry */
+
+    #portfolio-grid
+        display: grid
+        grid-gap: 2rem
+        grid-template-columns: 1fr
+
+        .box
+
+            a
+                display: block
+                height: 100%
+                width: 100%
+                border: none
+
+            img
+                height: 100%
+                width: 100%
+                object-fit: contain
+
+            h6
+                background-color: lighten($gray, 60%)
+                color: $gray
+                border-radius: 3px
+                display: block
+                height: 268px
+                width: 268px
+                text-align: center
+                line-height: 268px
+                text-transform: none
+
+    /* @media (Larger than phablet [38rem]) */
+    @media #{$larger-than-phablet}
+
+        #portfolio-grid
+            grid-template-columns: 1fr 1fr 1fr 1fr
+
+            &:hover .box img
+                opacity: .3
+
+            .box
+
+                &:hover
+
+                    img
+                        transform: scale(1)
+                        opacity: 1
+
+                img
+                    transform: scale(.95)
+                    transform-origin: center center
+                    transition: all .2s ease
+
+                &.a
+                    grid-column: 1 / 3
+                    grid-row: 1 / 3
+
+                &.b
+                    grid-column: 3 / 5
+                    grid-row: 1
+
+                &.c
+                    grid-column: 3 / 4
+                    grid-row: 2
+
+                &.d
+                    grid-column: 4 / 5
+                    grid-row: 2
+
+
+// About me
+#about-me
+
+    p
+        margin-bottom: 2rem
+
+    h3
+        font: $light 2.5rem / 130% $font-stack
+        letter-spacing: .0525rem
+
+        span
+            &:first-of-type
+                font: $semi-bold 3rem / 130% $font-stack
+                display: block
+                margin-bottom: .5rem
+
+            &:last-of-type
+                font: $medium 2.5rem / 130% $font-stack
+                color: $primary-color
+
+    figure.profile-img
+        position: relative
+        display: inline-block
+        line-height: 100%
+        width: 100%
+        height: auto
+        max-width: 20rem
+        max-height: 20rem
+
+        &::after
+            content: ""
+            display: block
+            height: 15%
+            width: 15%
+            background-color: red
+            position: absolute
+            top: 50%
+            left: 0
+            transform: translate(-50%, -50%) rotate(45deg)
+            background: $secondary-color
+            border: 5px solid $primary-color
+
+        img
+            width: 100%
+            height: auto
+            clip-path: polygon(0% 50%, 50% 0%, 100% 50%, 50% 100%)
+            -webkit-clip-path: polygon(0% 50%, 50% 0%, 100% 50%, 50% 100%)
+
+    h4
+        font: $regular 1.8rem / 130% $font-stack
+        letter-spacing: .0525rem
+        text-transform: none
+
+    ul#skills
+        list-style: none
+        columns: 3
+        column-gap: 1rem
+        margin-bottom: 2rem
+
+        p
+            font: $light .9rem / 200% $font-stack
+            margin: 0
+
+    iframe
+        margin-bottom: 2rem
+
+    ul#social
+        list-style: none
+        display: flex
+        flex-wrap: wrap
+
+        li
+            margin-right: 1rem
+            margin-bottom: 1rem
+
+    .row
+        &:not(:last-child)
+            margin-bottom: 2rem
+
+
+
+//
+//    === PORTFOLIO ===
+//
+#portfolio-item.spotify
+    background: $lime-green
+
+#portfolio-item
+    $portfolio-primary-color: $orange
+    $portfolio-secondary-color: $dark-blue
+    $portfolio-typography-primary-color: $white
+    background: $portfolio-secondary-color
+
+    h1, h2, h3, h4, h5, h6, p, a, span, ul, li
+        color: $portfolio-typography-primary-color
+
+    p
+        font-size: 1rem
+        margin-bottom: 1rem
+
+    .back-to-portfolio
+        color: $portfolio-secondary-color
+        text-decoration: none
+        font: $medium 1rem / 100% $font-stack
+        position: absolute
+        top: 1.5rem
+        left: 1.5rem
+
+        .svg-inline--fa
+            margin-right: .5rem
+
+    #header-background
+        width: 100%
+        height: 100%
+        overflow: visible
+        transform: skewY(17.5deg)
+        transform-origin: top right
+        background: $portfolio-primary-color
+        z-index: -10
+        position: absolute
+
+    header
+        min-height: 80vh
+        display: flex
+        align-items: center
+        position: relative
+        overflow: hidden
+
+        h1
+            font: $bold 4.5rem / 120% $font-stack
+            color: $white
+            letter-spacing: .075rem
+            margin: 1rem 0 1rem 0
+
+        @media #{$larger-than-phablet}
+            h1
+                font-size: 5.5rem
+
+        .portfolio-item__details
+            align-items: flex-end
+            margin-top: 6rem
+
+        .portfolio-item__meta-data
+
+            h3
+                font: $semi-bold 1rem / 150% $font-stack
+                letter-spacing: .035rem
+                text-transform: uppercase
+                margin: 1.5rem 0 .5rem 0
+
+                &:first-of-type
+                    margin-top: 0
+
+        .portfolio-item__description
+
+            p
+                margin-bottom: 1.5rem
+
+        img
+            max-width: 100%
+            max-height: 100%
+
+    main
+
+        h2
+            font: $semi-bold 1rem / 150% $font-stack
+            letter-spacing: .035rem
+            text-transform: uppercase
+            margin: 1.5rem 0 .5rem 0
+            color: $portfolio-primary-color
+
+        .row
+            margin-top: 6.5rem
+            margin-bottom: 6.5rem
