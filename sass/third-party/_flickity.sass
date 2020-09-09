@@ -157,11 +157,18 @@
                 padding-left: 2rem
 
         .carousel-tags
+            display: inline-flex
+            
             li
                 font: $light 1.2rem / 150% $font-stack
                 color: $gray
                 letter-spacing: .035rem
                 list-style: none
+
+            li + li
+
+                &::before
+                    content: ", "
 
         p
             margin-bottom: 2rem
