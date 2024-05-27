@@ -1,0 +1,1659 @@
+/* /* Portfolio V1.0.0 */
+/* Copyright 2018, Bauke Posthuma */
+/* www.baukeposthuma.nl */
+/* // Pre-config of the style */
+/* ==========================================================================
+ * * Normalize.scss settings
+ * * ========================================================================== */
+/**
+ * * Includes legacy browser support IE6/7
+ * *
+ * * Set to false if you want to drop support for IE6 and IE7 */
+/* Base
+ * * ========================================================================== */
+/**
+ * * 1. Set default font family to sans-serif.
+ * * 2. Prevent iOS and IE text size adjust after device orientation change,
+ * *    without disabling user zoom.
+ * * 3. Corrects text resizing oddly in IE 6/7 when body `font-size` is set using
+ * *  `em` units. */
+html {
+  font-family: sans-serif;
+  /* 1 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+}
+
+/**
+ * * Remove default margin. */
+body {
+  margin: 0;
+}
+
+/* HTML5 display definitions
+ * * ========================================================================== */
+/**
+ * * Correct `block` display not defined for any HTML5 element in IE 8/9.
+ * * Correct `block` display not defined for `details` or `summary` in IE 10/11
+ * * and Firefox.
+ * * Correct `block` display not defined for `main` in IE 11. */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/**
+ * * 1. Correct `inline-block` display not defined in IE 6/7/8/9 and Firefox 3.
+ * * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera. */
+audio, canvas, progress, video {
+  display: inline-block;
+  /* 1 */
+  vertical-align: baseline;
+  /* 2 */
+}
+
+/**
+ * * Prevents modern browsers from displaying `audio` without controls.
+ * * Remove excess height in iOS 5 devices. */
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/**
+ * * Address `[hidden]` styling not present in IE 8/9/10.
+ * * Hide the `template` element in IE 8/9/10/11, Safari, and Firefox < 22. */
+[hidden], template {
+  display: none;
+}
+
+/* Links
+ * * ========================================================================== */
+/**
+ * * Remove the gray background color from active links in IE 10. */
+a {
+  background-color: transparent;
+}
+a:active, a:hover {
+  outline: 0;
+}
+
+/**
+ * * Improve readability of focused elements when they are also in an
+ * * active/hover state. */
+/* Text-level semantics
+ * * ========================================================================== */
+/**
+ * * Address styling not present in IE 8/9/10/11, Safari, and Chrome. */
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+/**
+ * * Address style set to `bolder` in Firefox 4+, Safari, and Chrome. */
+b, strong {
+  font-weight: bold;
+}
+
+/**
+ * * Address styling not present in Safari and Chrome. */
+dfn {
+  font-style: italic;
+}
+
+/**
+ * * Address variable `h1` font-size and margin within `section` and `article`
+ * * contexts in Firefox 4+, Safari, and Chrome. */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/**
+ * * Addresses styling not present in IE 8/9. */
+mark {
+  background: #ff0;
+  color: #000;
+}
+
+/**
+ * * Address inconsistent and variable font size in all browsers. */
+small {
+  font-size: 80%;
+}
+
+/**
+ * * Prevent `sub` and `sup` affecting `line-height` in all browsers. */
+sub {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+/* Embedded content
+ * * ========================================================================== */
+/**
+ * * 1. Remove border when inside `a` element in IE 8/9/10.
+ * * 2. Improves image quality when scaled in IE 7. */
+img {
+  border: 0;
+}
+
+/**
+ * * Correct overflow not hidden in IE 9/10/11. */
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* Grouping content
+ * * ========================================================================== */
+/**
+ * * Address margin not present in IE 8/9 and Safari. */
+figure {
+  margin: 0;
+}
+
+/**
+ * * Address differences between Firefox and other browsers. */
+hr {
+  box-sizing: content-box;
+  height: 0;
+}
+
+/**
+ * * Contain overflow in all browsers. */
+pre {
+  overflow: auto;
+}
+
+/**
+ * * Address odd `em`-unit font size rendering in all browsers.
+ * * Correct font family set oddly in IE 6, Safari 4/5, and Chrome. */
+code, kbd, pre, samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+/* Forms
+ * * ========================================================================== */
+/**
+ * * Known limitation: by default, Chrome and Safari on OS X allow very limited
+ * * styling of `select`, unless a `border` property is set. */
+/**
+ * * 1. Correct color not being inherited.
+ * *  Known issue: affects color of disabled elements.
+ * * 2. Correct font properties not being inherited.
+ * * 3. Address margins set differently in Firefox 4+, Safari, and Chrome.
+ * * 4. Improves appearance and consistency in all browsers. */
+button, input, optgroup, select, textarea {
+  color: inherit;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+  margin: 0;
+  /* 3 */
+}
+
+/**
+ * * Address `overflow` set to `hidden` in IE 8/9/10/11. */
+button {
+  overflow: visible;
+  text-transform: none;
+}
+
+/**
+ * * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * * All other form control elements do not inherit `text-transform` values.
+ * * Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera.
+ * * Correct `select` style inheritance in Firefox. */
+select {
+  text-transform: none;
+}
+
+/**
+ * * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ * *  and `video` controls.
+ * * 2. Correct inability to style clickable `input` types in iOS.
+ * * 3. Improve usability and consistency of cursor style between image-type
+ * *  `input` and others.
+ * * 4. Removes inner spacing in IE 7 without affecting normal text inputs.
+ * *  Known issue: inner spacing remains in IE 6. */
+button, html input[type=button] {
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */
+}
+
+input[type=reset], input[type=submit] {
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */
+}
+
+/**
+ * * Re-set default cursor for disabled elements. */
+button[disabled], html input[disabled] {
+  cursor: default;
+}
+
+/**
+ * * Remove inner padding and border in Firefox 4+. */
+button::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+input {
+  line-height: normal;
+}
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+input[type=checkbox], input[type=radio] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
+  height: auto;
+}
+input[type=search] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  box-sizing: content-box;
+  /* 2 */
+}
+input[type=search]::-webkit-search-cancel-button, input[type=search]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * * the UA stylesheet. */
+/**
+ * * 1. Address box sizing set to `content-box` in IE 8/9/10.
+ * * 2. Remove excess padding in IE 8/9/10.
+ * *  Known issue: excess padding remains in IE 6. */
+/**
+ * * Fix the cursor style for Chrome's increment/decrement buttons. For certain
+ * * `font-size` values of the `input`, it causes the cursor style of the
+ * * decrement button to change from `default` to `text`. */
+/**
+ * * 1. Address `appearance` set to `searchfield` in Safari and Chrome.
+ * * 2. Address `box-sizing` set to `border-box` in Safari and Chrome. */
+/**
+ * * Remove inner padding and search cancel button in Safari and Chrome on OS X.
+ * * Safari (but not Chrome) clips the cancel button when the search input has
+ * * padding (and `textfield` appearance). */
+/**
+ * * Define consistent border, margin, and padding. */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+
+/**
+ * * 1. Correct `color` not being inherited in IE 8/9/10/11.
+ * * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ * * 3. Corrects text not wrapping in Firefox 3.
+ * * 4. Corrects alignment displayed oddly in IE 6/7. */
+legend {
+  border: 0;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+
+/**
+ * * Remove default vertical scrollbar in IE 8/9/10/11. */
+textarea {
+  overflow: auto;
+}
+
+/**
+ * * Don't inherit the `font-weight` (applied by a rule above).
+ * * NOTE: the default cannot safely be changed in Chrome and Safari on OS X. */
+optgroup {
+  font-weight: bold;
+}
+
+/* Tables
+ * * ========================================================================== */
+/**
+ * * Remove most spacing between table cells. */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td, th {
+  padding: 0;
+}
+
+/**********/
+/* Colors */
+/**********/
+/**************/
+/* Typography */
+/**************/
+/*****************/
+/* Media Queries */
+/*****************/
+/*****************/
+/* Grid settings */
+/*****************/
+.flickity-enabled {
+  position: relative;
+}
+.flickity-enabled:focus {
+  outline: none;
+}
+
+.flickity-viewport {
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+}
+
+.flickity-slider {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+/* draggable */
+.flickity-enabled.is-draggable {
+  -webkit-tap-highlight-color: transparent;
+  tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+.flickity-enabled.is-draggable .flickity-viewport {
+  cursor: move;
+  cursor: grab;
+}
+.flickity-enabled.is-draggable .flickity-viewport.is-pointer-down {
+  cursor: grabbing;
+}
+
+/* ---- previous/next buttons ---- */
+.flickity-prev-next-button {
+  position: absolute;
+  top: 50%;
+  width: 4rem;
+  height: 5rem;
+  border: none;
+  border-radius: 50%;
+  background: white;
+  background: rgb(13, 20, 51);
+  cursor: pointer;
+  /* vertically center */
+  transform: translateY(-50%);
+}
+.flickity-prev-next-button:hover {
+  background: #152154;
+}
+.flickity-prev-next-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 5px #09F;
+}
+.flickity-prev-next-button:active {
+  opacity: 0.6;
+}
+.flickity-prev-next-button.previous {
+  left: 0;
+  border-radius: 0 3px 3px 0;
+}
+.flickity-prev-next-button.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+.flickity-prev-next-button:disabled {
+  cursor: auto;
+  background: rgba(13, 20, 51, 0.25);
+}
+.flickity-prev-next-button svg {
+  position: absolute;
+  left: 20%;
+  top: 20%;
+  width: 60%;
+  height: 60%;
+}
+.flickity-prev-next-button .arrow {
+  fill: rgb(255, 255, 255);
+}
+
+/* ---- page dots ---- */
+.flickity-page-dots {
+  position: absolute;
+  width: 100%;
+  bottom: -25px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-align: center;
+  line-height: 1;
+}
+.flickity-page-dots .dot {
+  display: inline-block;
+  width: 0.8rem;
+  height: 0.8rem;
+  margin: 0.4rem;
+  background: #dddddd;
+  border-radius: 15%;
+  cursor: pointer;
+}
+.flickity-page-dots .dot.is-selected {
+  background: rgb(13, 20, 51);
+}
+
+/* Custom styling for added elements */
+.flickity-enabled .flickity-prev-next-button,
+.flickity-enabled .flickity-page-dots {
+  display: none;
+}
+.flickity-enabled.is-draggable .flickity-prev-next-button,
+.flickity-enabled.is-draggable .flickity-page-dots {
+  display: inherit;
+}
+
+.main-carousel .carousel-cell {
+  width: 100%;
+}
+.main-carousel .carousel-cell .carousel-image {
+  width: 100%;
+  height: 100%;
+  margin-right: auto;
+  position: relative;
+  display: flex;
+}
+.main-carousel .carousel-cell .carousel-image img {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(1px 2px 2px rgba(0, 0, 0, 0.15));
+}
+.main-carousel .carousel-cell .carousel-description div {
+  padding-left: 2rem;
+}
+.main-carousel .carousel-cell .carousel-tags {
+  display: inline-flex;
+}
+.main-carousel .carousel-cell .carousel-tags li {
+  font: 300 1.2rem/150% "Montserrat", sans-serif;
+  color: rgb(93, 93, 93);
+  letter-spacing: 0.035rem;
+  list-style: none;
+}
+.main-carousel .carousel-cell .carousel-tags li + li::before {
+  content: ", ";
+}
+.main-carousel .carousel-cell p {
+  margin-bottom: 2rem;
+}
+@media (min-width: 75rem) {
+  .main-carousel .carousel-cell {
+    padding: 1.5rem;
+  }
+  .main-carousel .carousel-cell .wrapper {
+    display: flex;
+  }
+  .main-carousel .carousel-cell .carousel-image {
+    width: calc(50% - 1rem);
+    margin-right: auto;
+    position: relative;
+    display: flex;
+  }
+  .main-carousel .carousel-cell .carousel-image svg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform: translate(-20px, -20px);
+    z-index: -1;
+  }
+  .main-carousel .carousel-cell .carousel-description {
+    width: calc(50% - 1rem);
+    margin-left: auto;
+  }
+}
+
+/* Flexbox SASS Gridsystem */
+/* Coded by: Bauke Posthuma */
+/* Flexbox grid settings */
+/* Breakpoints */
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-left: calc(-2rem / 2);
+  margin-right: calc(-2rem / 2);
+}
+.row:first-child {
+  padding-left: 0;
+}
+.row:last-child {
+  padding-right: 0;
+}
+.row [class*=col-] {
+  padding-left: calc(2rem / 2);
+  padding-right: calc(2rem / 2);
+}
+@media (max-width: 35.98rem) {
+  .row .col-xs-1 {
+    flex-basis: calc(8.3333333333% * 1);
+    max-width: calc(8.3333333333% * 1);
+  }
+  .row .col-xs-2 {
+    flex-basis: calc(8.3333333333% * 2);
+    max-width: calc(8.3333333333% * 2);
+  }
+  .row .col-xs-3 {
+    flex-basis: calc(8.3333333333% * 3);
+    max-width: calc(8.3333333333% * 3);
+  }
+  .row .col-xs-4 {
+    flex-basis: calc(8.3333333333% * 4);
+    max-width: calc(8.3333333333% * 4);
+  }
+  .row .col-xs-5 {
+    flex-basis: calc(8.3333333333% * 5);
+    max-width: calc(8.3333333333% * 5);
+  }
+  .row .col-xs-6 {
+    flex-basis: calc(8.3333333333% * 6);
+    max-width: calc(8.3333333333% * 6);
+  }
+  .row .col-xs-7 {
+    flex-basis: calc(8.3333333333% * 7);
+    max-width: calc(8.3333333333% * 7);
+  }
+  .row .col-xs-8 {
+    flex-basis: calc(8.3333333333% * 8);
+    max-width: calc(8.3333333333% * 8);
+  }
+  .row .col-xs-9 {
+    flex-basis: calc(8.3333333333% * 9);
+    max-width: calc(8.3333333333% * 9);
+  }
+  .row .col-xs-10 {
+    flex-basis: calc(8.3333333333% * 10);
+    max-width: calc(8.3333333333% * 10);
+  }
+  .row .col-xs-11 {
+    flex-basis: calc(8.3333333333% * 11);
+    max-width: calc(8.3333333333% * 11);
+  }
+  .row .col-xs-12 {
+    flex-basis: calc(8.3333333333% * 12);
+    max-width: calc(8.3333333333% * 12);
+  }
+  .row .offset-xs-0 {
+    margin-left: calc(8.3333333333% * 0);
+  }
+  .row .offset-xs-1 {
+    margin-left: calc(8.3333333333% * 1);
+  }
+  .row .offset-xs-2 {
+    margin-left: calc(8.3333333333% * 2);
+  }
+  .row .offset-xs-3 {
+    margin-left: calc(8.3333333333% * 3);
+  }
+  .row .offset-xs-4 {
+    margin-left: calc(8.3333333333% * 4);
+  }
+  .row .offset-xs-5 {
+    margin-left: calc(8.3333333333% * 5);
+  }
+  .row .offset-xs-6 {
+    margin-left: calc(8.3333333333% * 6);
+  }
+  .row .offset-xs-7 {
+    margin-left: calc(8.3333333333% * 7);
+  }
+  .row .offset-xs-8 {
+    margin-left: calc(8.3333333333% * 8);
+  }
+  .row .offset-xs-9 {
+    margin-left: calc(8.3333333333% * 9);
+  }
+  .row .offset-xs-10 {
+    margin-left: calc(8.3333333333% * 10);
+  }
+  .row .offset-xs-11 {
+    margin-left: calc(8.3333333333% * 11);
+  }
+}
+@media (min-width: 36rem) and (max-width: 47.98rem) {
+  .row .col-sm-1 {
+    flex-basis: calc(8.3333333333% * 1);
+    max-width: calc(8.3333333333% * 1);
+  }
+  .row .col-sm-2 {
+    flex-basis: calc(8.3333333333% * 2);
+    max-width: calc(8.3333333333% * 2);
+  }
+  .row .col-sm-3 {
+    flex-basis: calc(8.3333333333% * 3);
+    max-width: calc(8.3333333333% * 3);
+  }
+  .row .col-sm-4 {
+    flex-basis: calc(8.3333333333% * 4);
+    max-width: calc(8.3333333333% * 4);
+  }
+  .row .col-sm-5 {
+    flex-basis: calc(8.3333333333% * 5);
+    max-width: calc(8.3333333333% * 5);
+  }
+  .row .col-sm-6 {
+    flex-basis: calc(8.3333333333% * 6);
+    max-width: calc(8.3333333333% * 6);
+  }
+  .row .col-sm-7 {
+    flex-basis: calc(8.3333333333% * 7);
+    max-width: calc(8.3333333333% * 7);
+  }
+  .row .col-sm-8 {
+    flex-basis: calc(8.3333333333% * 8);
+    max-width: calc(8.3333333333% * 8);
+  }
+  .row .col-sm-9 {
+    flex-basis: calc(8.3333333333% * 9);
+    max-width: calc(8.3333333333% * 9);
+  }
+  .row .col-sm-10 {
+    flex-basis: calc(8.3333333333% * 10);
+    max-width: calc(8.3333333333% * 10);
+  }
+  .row .col-sm-11 {
+    flex-basis: calc(8.3333333333% * 11);
+    max-width: calc(8.3333333333% * 11);
+  }
+  .row .col-sm-12 {
+    flex-basis: calc(8.3333333333% * 12);
+    max-width: calc(8.3333333333% * 12);
+  }
+  .row .offset-sm-0 {
+    margin-left: calc(8.3333333333% * 0);
+  }
+  .row .offset-sm-1 {
+    margin-left: calc(8.3333333333% * 1);
+  }
+  .row .offset-sm-2 {
+    margin-left: calc(8.3333333333% * 2);
+  }
+  .row .offset-sm-3 {
+    margin-left: calc(8.3333333333% * 3);
+  }
+  .row .offset-sm-4 {
+    margin-left: calc(8.3333333333% * 4);
+  }
+  .row .offset-sm-5 {
+    margin-left: calc(8.3333333333% * 5);
+  }
+  .row .offset-sm-6 {
+    margin-left: calc(8.3333333333% * 6);
+  }
+  .row .offset-sm-7 {
+    margin-left: calc(8.3333333333% * 7);
+  }
+  .row .offset-sm-8 {
+    margin-left: calc(8.3333333333% * 8);
+  }
+  .row .offset-sm-9 {
+    margin-left: calc(8.3333333333% * 9);
+  }
+  .row .offset-sm-10 {
+    margin-left: calc(8.3333333333% * 10);
+  }
+  .row .offset-sm-11 {
+    margin-left: calc(8.3333333333% * 11);
+  }
+}
+@media (min-width: 48rem) and (max-width: 61.98rem) {
+  .row .col-md-1 {
+    flex-basis: calc(8.3333333333% * 1);
+    max-width: calc(8.3333333333% * 1);
+  }
+  .row .col-md-2 {
+    flex-basis: calc(8.3333333333% * 2);
+    max-width: calc(8.3333333333% * 2);
+  }
+  .row .col-md-3 {
+    flex-basis: calc(8.3333333333% * 3);
+    max-width: calc(8.3333333333% * 3);
+  }
+  .row .col-md-4 {
+    flex-basis: calc(8.3333333333% * 4);
+    max-width: calc(8.3333333333% * 4);
+  }
+  .row .col-md-5 {
+    flex-basis: calc(8.3333333333% * 5);
+    max-width: calc(8.3333333333% * 5);
+  }
+  .row .col-md-6 {
+    flex-basis: calc(8.3333333333% * 6);
+    max-width: calc(8.3333333333% * 6);
+  }
+  .row .col-md-7 {
+    flex-basis: calc(8.3333333333% * 7);
+    max-width: calc(8.3333333333% * 7);
+  }
+  .row .col-md-8 {
+    flex-basis: calc(8.3333333333% * 8);
+    max-width: calc(8.3333333333% * 8);
+  }
+  .row .col-md-9 {
+    flex-basis: calc(8.3333333333% * 9);
+    max-width: calc(8.3333333333% * 9);
+  }
+  .row .col-md-10 {
+    flex-basis: calc(8.3333333333% * 10);
+    max-width: calc(8.3333333333% * 10);
+  }
+  .row .col-md-11 {
+    flex-basis: calc(8.3333333333% * 11);
+    max-width: calc(8.3333333333% * 11);
+  }
+  .row .col-md-12 {
+    flex-basis: calc(8.3333333333% * 12);
+    max-width: calc(8.3333333333% * 12);
+  }
+  .row .offset-md-0 {
+    margin-left: calc(8.3333333333% * 0);
+  }
+  .row .offset-md-1 {
+    margin-left: calc(8.3333333333% * 1);
+  }
+  .row .offset-md-2 {
+    margin-left: calc(8.3333333333% * 2);
+  }
+  .row .offset-md-3 {
+    margin-left: calc(8.3333333333% * 3);
+  }
+  .row .offset-md-4 {
+    margin-left: calc(8.3333333333% * 4);
+  }
+  .row .offset-md-5 {
+    margin-left: calc(8.3333333333% * 5);
+  }
+  .row .offset-md-6 {
+    margin-left: calc(8.3333333333% * 6);
+  }
+  .row .offset-md-7 {
+    margin-left: calc(8.3333333333% * 7);
+  }
+  .row .offset-md-8 {
+    margin-left: calc(8.3333333333% * 8);
+  }
+  .row .offset-md-9 {
+    margin-left: calc(8.3333333333% * 9);
+  }
+  .row .offset-md-10 {
+    margin-left: calc(8.3333333333% * 10);
+  }
+  .row .offset-md-11 {
+    margin-left: calc(8.3333333333% * 11);
+  }
+}
+@media (min-width: 62rem) and (max-width: 74.98rem) {
+  .row .col-lg-1 {
+    flex-basis: calc(8.3333333333% * 1);
+    max-width: calc(8.3333333333% * 1);
+  }
+  .row .col-lg-2 {
+    flex-basis: calc(8.3333333333% * 2);
+    max-width: calc(8.3333333333% * 2);
+  }
+  .row .col-lg-3 {
+    flex-basis: calc(8.3333333333% * 3);
+    max-width: calc(8.3333333333% * 3);
+  }
+  .row .col-lg-4 {
+    flex-basis: calc(8.3333333333% * 4);
+    max-width: calc(8.3333333333% * 4);
+  }
+  .row .col-lg-5 {
+    flex-basis: calc(8.3333333333% * 5);
+    max-width: calc(8.3333333333% * 5);
+  }
+  .row .col-lg-6 {
+    flex-basis: calc(8.3333333333% * 6);
+    max-width: calc(8.3333333333% * 6);
+  }
+  .row .col-lg-7 {
+    flex-basis: calc(8.3333333333% * 7);
+    max-width: calc(8.3333333333% * 7);
+  }
+  .row .col-lg-8 {
+    flex-basis: calc(8.3333333333% * 8);
+    max-width: calc(8.3333333333% * 8);
+  }
+  .row .col-lg-9 {
+    flex-basis: calc(8.3333333333% * 9);
+    max-width: calc(8.3333333333% * 9);
+  }
+  .row .col-lg-10 {
+    flex-basis: calc(8.3333333333% * 10);
+    max-width: calc(8.3333333333% * 10);
+  }
+  .row .col-lg-11 {
+    flex-basis: calc(8.3333333333% * 11);
+    max-width: calc(8.3333333333% * 11);
+  }
+  .row .col-lg-12 {
+    flex-basis: calc(8.3333333333% * 12);
+    max-width: calc(8.3333333333% * 12);
+  }
+  .row .offset-lg-0 {
+    margin-left: calc(8.3333333333% * 0);
+  }
+  .row .offset-lg-1 {
+    margin-left: calc(8.3333333333% * 1);
+  }
+  .row .offset-lg-2 {
+    margin-left: calc(8.3333333333% * 2);
+  }
+  .row .offset-lg-3 {
+    margin-left: calc(8.3333333333% * 3);
+  }
+  .row .offset-lg-4 {
+    margin-left: calc(8.3333333333% * 4);
+  }
+  .row .offset-lg-5 {
+    margin-left: calc(8.3333333333% * 5);
+  }
+  .row .offset-lg-6 {
+    margin-left: calc(8.3333333333% * 6);
+  }
+  .row .offset-lg-7 {
+    margin-left: calc(8.3333333333% * 7);
+  }
+  .row .offset-lg-8 {
+    margin-left: calc(8.3333333333% * 8);
+  }
+  .row .offset-lg-9 {
+    margin-left: calc(8.3333333333% * 9);
+  }
+  .row .offset-lg-10 {
+    margin-left: calc(8.3333333333% * 10);
+  }
+  .row .offset-lg-11 {
+    margin-left: calc(8.3333333333% * 11);
+  }
+}
+@media (min-width: 75rem) {
+  .row .col-xl-1 {
+    flex-basis: calc(8.3333333333% * 1);
+    max-width: calc(8.3333333333% * 1);
+  }
+  .row .col-xl-2 {
+    flex-basis: calc(8.3333333333% * 2);
+    max-width: calc(8.3333333333% * 2);
+  }
+  .row .col-xl-3 {
+    flex-basis: calc(8.3333333333% * 3);
+    max-width: calc(8.3333333333% * 3);
+  }
+  .row .col-xl-4 {
+    flex-basis: calc(8.3333333333% * 4);
+    max-width: calc(8.3333333333% * 4);
+  }
+  .row .col-xl-5 {
+    flex-basis: calc(8.3333333333% * 5);
+    max-width: calc(8.3333333333% * 5);
+  }
+  .row .col-xl-6 {
+    flex-basis: calc(8.3333333333% * 6);
+    max-width: calc(8.3333333333% * 6);
+  }
+  .row .col-xl-7 {
+    flex-basis: calc(8.3333333333% * 7);
+    max-width: calc(8.3333333333% * 7);
+  }
+  .row .col-xl-8 {
+    flex-basis: calc(8.3333333333% * 8);
+    max-width: calc(8.3333333333% * 8);
+  }
+  .row .col-xl-9 {
+    flex-basis: calc(8.3333333333% * 9);
+    max-width: calc(8.3333333333% * 9);
+  }
+  .row .col-xl-10 {
+    flex-basis: calc(8.3333333333% * 10);
+    max-width: calc(8.3333333333% * 10);
+  }
+  .row .col-xl-11 {
+    flex-basis: calc(8.3333333333% * 11);
+    max-width: calc(8.3333333333% * 11);
+  }
+  .row .col-xl-12 {
+    flex-basis: calc(8.3333333333% * 12);
+    max-width: calc(8.3333333333% * 12);
+  }
+  .row .offset-xl-0 {
+    margin-left: calc(8.3333333333% * 0);
+  }
+  .row .offset-xl-1 {
+    margin-left: calc(8.3333333333% * 1);
+  }
+  .row .offset-xl-2 {
+    margin-left: calc(8.3333333333% * 2);
+  }
+  .row .offset-xl-3 {
+    margin-left: calc(8.3333333333% * 3);
+  }
+  .row .offset-xl-4 {
+    margin-left: calc(8.3333333333% * 4);
+  }
+  .row .offset-xl-5 {
+    margin-left: calc(8.3333333333% * 5);
+  }
+  .row .offset-xl-6 {
+    margin-left: calc(8.3333333333% * 6);
+  }
+  .row .offset-xl-7 {
+    margin-left: calc(8.3333333333% * 7);
+  }
+  .row .offset-xl-8 {
+    margin-left: calc(8.3333333333% * 8);
+  }
+  .row .offset-xl-9 {
+    margin-left: calc(8.3333333333% * 9);
+  }
+  .row .offset-xl-10 {
+    margin-left: calc(8.3333333333% * 10);
+  }
+  .row .offset-xl-11 {
+    margin-left: calc(8.3333333333% * 11);
+  }
+}
+
+/* Base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: rgb(93, 93, 93);
+  background: rgb(255, 255, 255);
+}
+
+/* Typography */
+p, body {
+  font: 300 1.125rem/200% "Montserrat", sans-serif;
+}
+
+p {
+  text-rendering: optimizeLegibility;
+  font-smooth: auto;
+  -webkit-font-smooth: auto;
+}
+p a {
+  color: rgb(13, 20, 51);
+  border-bottom: 1px solid rgb(13, 20, 51);
+  text-decoration: none;
+  transition: border-bottom;
+  transition-duration: 150ms;
+  white-space: nowrap;
+  text-rendering: optimizeLegibility;
+  font-smooth: auto;
+  -webkit-font-smooth: auto;
+}
+p a:hover {
+  border-bottom: 1px solid transparent;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 2rem;
+  text-rendering: optimizeLegibility;
+  font-smooth: auto;
+  -webkit-font-smooth: auto;
+}
+
+h1 {
+  font: 700 3.25rem/122% "Montserrat", sans-serif;
+  color: rgb(255, 255, 255);
+  letter-spacing: 0.075rem;
+}
+
+h2 {
+  font: 600 1.5rem/180% "Montserrat", sans-serif;
+  color: rgb(13, 20, 51);
+  letter-spacing: 0.0525rem;
+  text-transform: uppercase;
+}
+
+h3 {
+  font: 600 2.25rem/150% "Montserrat", sans-serif;
+  color: rgb(13, 20, 51);
+  letter-spacing: 0.07875rem;
+}
+
+h4 {
+  font: 600 1rem/150% "Montserrat", sans-serif;
+  color: rgb(93, 93, 93);
+  letter-spacing: 0.035rem;
+  text-transform: uppercase;
+}
+
+h6 {
+  font: 600 1rem/150% "Montserrat", sans-serif;
+  color: rgb(93, 93, 93);
+  letter-spacing: 0.035rem;
+  text-transform: uppercase;
+}
+
+blockquote {
+  font: 300 1.5rem/180% "Montserrat", sans-serif;
+  font-style: italic;
+  color: rgb(255, 255, 255);
+  text-align: center;
+}
+
+/* Images */
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/* Highlighted titles */
+.highlight h1, .highlight h2, .highlight h3, .highlight h4, .highlight h5, .highlight h6 {
+  margin-bottom: 0;
+}
+.highlight span {
+  width: 6rem;
+  height: 0.3125rem;
+  margin-bottom: 1rem;
+  background-color: rgb(255, 162, 10);
+  display: block;
+}
+
+/* Content elements */
+section {
+  padding: 6rem 0 4rem 0;
+}
+section.dark-section {
+  background-color: rgb(13, 20, 51);
+  color: rgb(255, 255, 255);
+}
+section.dark-section h1, section.dark-section h2, section.dark-section h3, section.dark-section h4, section.dark-section h5, section.dark-section h6 {
+  color: rgb(255, 255, 255);
+}
+
+/* Buttons */
+.button,
+button,
+input[type=submit],
+input[type=reset],
+input[type=button] {
+  border: 1px solid #dddddd;
+  border-radius: 3px;
+  padding: 0.6875rem 1.2rem;
+  font: 500 0.8rem/150% "Montserrat", sans-serif;
+  color: rgb(93, 93, 93);
+  letter-spacing: 0.035rem;
+  text-decoration: none;
+  transition: background 0.2s ease-in, border 0.2s ease-in, color 0.2s ease-in;
+  display: inline-block;
+  margin: 0 0 1rem;
+  line-height: 1.5rem;
+  text-transform: uppercase;
+  text-align: center;
+}
+.button:hover,
+button:hover,
+input[type=submit]:hover,
+input[type=reset]:hover,
+input[type=button]:hover {
+  border-color: rgb(93, 93, 93);
+}
+.button.button-primary,
+button.button-primary,
+input[type=submit].button-primary,
+input[type=reset].button-primary,
+input[type=button].button-primary {
+  background: rgb(13, 20, 51);
+  border-color: rgb(13, 20, 51);
+  color: rgb(255, 255, 255);
+}
+.button.button-primary:hover,
+button.button-primary:hover,
+input[type=submit].button-primary:hover,
+input[type=reset].button-primary:hover,
+input[type=button].button-primary:hover {
+  background: #17245c;
+  border-color: #17245c;
+}
+.button .svg-inline--fa,
+button .svg-inline--fa,
+input[type=submit] .svg-inline--fa,
+input[type=reset] .svg-inline--fa,
+input[type=button] .svg-inline--fa {
+  margin-right: 0.6875rem;
+}
+
+section.dark-section .button,
+section.dark-section button,
+section.dark-section input[type=submit],
+section.dark-section input[type=reset],
+section.dark-section input[type=button] {
+  border: 1px solid rgb(255, 162, 10);
+  color: rgb(255, 255, 255);
+}
+section.dark-section .button:hover,
+section.dark-section button:hover,
+section.dark-section input[type=submit]:hover,
+section.dark-section input[type=reset]:hover,
+section.dark-section input[type=button]:hover {
+  border-color: rgb(255, 162, 10);
+  background-color: rgb(255, 162, 10);
+}
+section.dark-section .button.button-primary,
+section.dark-section button.button-primary,
+section.dark-section input[type=submit].button-primary,
+section.dark-section input[type=reset].button-primary,
+section.dark-section input[type=button].button-primary {
+  background-color: rgb(255, 162, 10);
+}
+section.dark-section .button.button-primary:hover,
+section.dark-section button.button-primary:hover,
+section.dark-section input[type=submit].button-primary:hover,
+section.dark-section input[type=reset].button-primary:hover,
+section.dark-section input[type=button].button-primary:hover {
+  background: #d68500;
+  border-color: #d68500;
+}
+section.dark-section p a {
+  color: rgb(255, 255, 255);
+  border-bottom: 1px solid rgb(255, 162, 10);
+}
+section.dark-section p a:hover {
+  border-bottom: 1px solid transparent;
+}
+
+/* Forms */
+input[type=email],
+input[type=number],
+input[type=search],
+input[type=text],
+input[type=tel],
+input[type=url],
+input[type=password],
+textarea,
+select {
+  height: 3rem;
+  padding: 0.5rem 0.8rem;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid #D1D1D1;
+  border-radius: 0.25rem;
+  box-shadow: none;
+  box-sizing: border-box;
+}
+
+input[type=email],
+input[type=number],
+input[type=search],
+input[type=text],
+input[type=tel],
+input[type=url],
+input[type=password],
+textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+textarea {
+  min-height: 65px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+input[type=email]:focus,
+input[type=number]:focus,
+input[type=search]:focus,
+input[type=text]:focus,
+input[type=tel]:focus,
+input[type=url]:focus,
+input[type=password]:focus,
+textarea:focus,
+select:focus {
+  border: 1px solid #33C3F0;
+  outline: 0;
+}
+
+label,
+legend {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+fieldset {
+  padding: 0;
+  border-width: 0;
+}
+
+input[type=checkbox],
+input[type=radio] {
+  display: inline;
+}
+
+label > .label-body {
+  display: inline-block;
+  margin-left: 0.5rem;
+  font-weight: normal;
+}
+
+/* Social list */
+.social-item {
+  background: rgb(93, 93, 93);
+  border: 0;
+  width: 100%;
+  display: block;
+  padding: 1rem 3rem;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  border-radius: 3px;
+  text-decoration: none;
+  transition: all 0.2s ease-out;
+}
+.social-item:hover {
+  transition: all 0.2s ease-in;
+  transform: scale(1.05);
+  filter: drop-shadow(0 4px 8px rgb(0, 0, 0));
+}
+.social-item span {
+  display: block;
+  font-size: 1rem;
+  line-height: 1rem;
+  margin-top: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.0625rem;
+  font: 500 0.8rem/100% "Montserrat", sans-serif;
+}
+.social-item.social-item__codepen {
+  background: rgb(230, 73, 128);
+}
+.social-item.social-item__github {
+  color: #211f1f;
+  background: #fff;
+}
+.social-item.social-item__spotify {
+  background: rgb(30, 215, 96);
+}
+.social-item.social-item__linkedin {
+  background: rgb(0, 119, 181);
+}
+.social-item.social-item__twitter {
+  background: rgb(8, 160, 233);
+}
+.social-item.social-item__telegram {
+  color: rgb(8, 160, 233);
+  background: #fff;
+}
+
+/* Codepreview */
+code {
+  padding: 1.5625rem 1.875rem;
+  white-space: pre;
+  word-wrap: break-word;
+  border: 1px solid #e1e1e1;
+  border-radius: 4px;
+  background: rgb(255, 255, 255);
+  font-family: Menlo, "Bitstream Vera Sans Mono", "DejaVu Sans Mono", Monaco, Consolas, monospace;
+  font-size: 0.75rem;
+  -webkit-font-smoothing: antialiased;
+  display: block;
+}
+
+/* Wrapper */
+.wrapper {
+  padding: 0 1rem;
+  max-width: 24rem;
+  margin: 0 auto;
+}
+
+/* @media (Larger than mobile [25rem]) */
+@media (min-width: 25rem) {
+  .wrapper {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    max-width: 50rem;
+  }
+}
+@media (min-width: 62rem) {
+  .wrapper {
+    padding-left: 5rem;
+    padding-right: 5rem;
+    max-width: 1472px;
+  }
+}
+@media (min-width: 75rem) {
+  .wrapper {
+    padding-left: 10rem;
+    padding-right: 10rem;
+    max-width: 1472px;
+  }
+}
+#home {
+  /* Header */
+  /* @media (Larger than phablet [38rem]) */
+  /* Portfolio masonry */
+  /* @media (Larger than phablet [38rem]) */
+}
+#home header {
+  background-image: url("../img/background.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: rgb(255, 255, 255);
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  -webkit-clip-path: polygon(0 0, 100% 0%, 100% 94%, 0 100%);
+          clip-path: polygon(0 0, 100% 0%, 100% 94%, 0 100%);
+  padding-bottom: 100px;
+}
+#home header h1 {
+  font: 700 3.25rem/122% "Montserrat", sans-serif;
+  color: rgb(255, 255, 255);
+  letter-spacing: 0.075rem;
+  margin: 1rem 0 1rem 0;
+}
+#home header .highlight {
+  width: 6rem;
+  height: 0.3125rem;
+  margin-bottom: 1rem;
+  background-color: rgb(255, 162, 10);
+  display: block;
+}
+#home header p {
+  margin: 0 0 2rem 0;
+  line-height: 2;
+}
+#home header a {
+  color: rgb(255, 255, 255);
+  font: 500 1rem/100% "Montserrat", sans-serif;
+  text-decoration: none;
+  display: inline-block;
+  line-height: 150%;
+  border-bottom: 2px solid rgb(255, 162, 10);
+  white-space: nowrap;
+}
+#home header .new-line {
+  display: block;
+}
+@media (min-width: 38rem) {
+  #home header .wrapper {
+    max-width: 880px;
+  }
+  #home header h1 {
+    font-size: 4.5rem;
+    margin: 2rem 0 3.5rem 0;
+  }
+  #home header .highlight {
+    height: 1rem;
+    width: 8.875rem;
+    min-width: 8.875rem;
+    background-color: rgb(255, 162, 10);
+    border: 0;
+    margin-right: 2.5rem;
+  }
+  #home header .header-flex {
+    display: flex;
+    align-items: baseline;
+  }
+}
+#home #portfolio-grid {
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-columns: 1fr;
+}
+#home #portfolio-grid .box a {
+  display: block;
+  height: 100%;
+  width: 100%;
+  border: none;
+}
+#home #portfolio-grid .box img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+#home #portfolio-grid .box h6 {
+  background-color: #f6f6f6;
+  color: rgb(93, 93, 93);
+  border-radius: 3px;
+  display: block;
+  height: 268px;
+  width: 268px;
+  text-align: center;
+  line-height: 268px;
+  text-transform: none;
+}
+@media (min-width: 38rem) {
+  #home #portfolio-grid {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  #home #portfolio-grid .box:hover img {
+    transform: scale(1);
+    opacity: 1;
+  }
+  #home #portfolio-grid .box img {
+    transform: scale(0.95);
+    transform-origin: center center;
+    transition: all 0.2s ease;
+  }
+  #home #portfolio-grid .box.a {
+    grid-column: 1/3;
+    grid-row: 1/3;
+  }
+  #home #portfolio-grid .box.b {
+    grid-column: 3/5;
+    grid-row: 1;
+  }
+  #home #portfolio-grid .box.c {
+    grid-column: 3/4;
+    grid-row: 2;
+  }
+  #home #portfolio-grid .box.d {
+    grid-column: 4/5;
+    grid-row: 2;
+  }
+}
+
+#about-me {
+  -webkit-clip-path: polygon(0 0, 100% 6vw, 100% 100%, 0 100%);
+          clip-path: polygon(0 0, 100% 6vw, 100% 100%, 0 100%);
+  padding-top: 100px;
+}
+#about-me p {
+  margin-bottom: 2rem;
+}
+#about-me h3 {
+  font: 300 2.5rem/130% "Montserrat", sans-serif;
+  letter-spacing: 0.0525rem;
+}
+#about-me h3 span:first-of-type {
+  font: 600 3rem/130% "Montserrat", sans-serif;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+#about-me h3 span:last-of-type {
+  font: 500 2.5rem/130% "Montserrat", sans-serif;
+  color: rgb(255, 162, 10);
+}
+#about-me figure.profile-img {
+  position: relative;
+  display: inline-block;
+  line-height: 100%;
+  width: 100%;
+  height: auto;
+  max-width: 20rem;
+  max-height: 20rem;
+}
+#about-me figure.profile-img::after {
+  content: "";
+  display: block;
+  height: 15%;
+  width: 15%;
+  background-color: red;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(-50%, -50%) rotate(45deg);
+  background: rgb(13, 20, 51);
+  border: 5px solid rgb(255, 162, 10);
+}
+#about-me figure.profile-img img {
+  width: 100%;
+  height: auto;
+  clip-path: polygon(0% 50%, 50% 0%, 100% 50%, 50% 100%);
+  -webkit-clip-path: polygon(0% 50%, 50% 0%, 100% 50%, 50% 100%);
+}
+#about-me h4 {
+  font: 400 1.8rem/130% "Montserrat", sans-serif;
+  letter-spacing: 0.0525rem;
+  text-transform: none;
+}
+#about-me ul#skills {
+  list-style: none;
+  -moz-columns: 3;
+       columns: 3;
+  -moz-column-gap: 1rem;
+       column-gap: 1rem;
+  margin-bottom: 2rem;
+}
+#about-me ul#skills p {
+  font: 300 0.9rem/200% "Montserrat", sans-serif;
+  margin: 0;
+}
+#about-me iframe {
+  margin-bottom: 2rem;
+}
+#about-me ul#social {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+#about-me ul#social li {
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+}
+#about-me .row:not(:last-child) {
+  margin-bottom: 2rem;
+}
+
+#portfolio-item.spotify {
+  background: rgb(65, 244, 166);
+}
+
+#portfolio-item {
+  background: rgb(13, 20, 51);
+}
+#portfolio-item h1, #portfolio-item h2, #portfolio-item h3, #portfolio-item h4, #portfolio-item h5, #portfolio-item h6, #portfolio-item p, #portfolio-item a, #portfolio-item span, #portfolio-item ul, #portfolio-item li {
+  color: rgb(255, 255, 255);
+}
+#portfolio-item p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+#portfolio-item .back-to-portfolio {
+  color: rgb(13, 20, 51);
+  text-decoration: none;
+  font: 500 1rem/100% "Montserrat", sans-serif;
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+}
+#portfolio-item .back-to-portfolio .svg-inline--fa {
+  margin-right: 0.5rem;
+}
+#portfolio-item #header-background {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  transform: skewY(17.5deg);
+  transform-origin: top right;
+  background: rgb(255, 162, 10);
+  z-index: -10;
+  position: absolute;
+}
+#portfolio-item header {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+#portfolio-item header h1 {
+  font: 700 4.5rem/120% "Montserrat", sans-serif;
+  color: rgb(255, 255, 255);
+  letter-spacing: 0.075rem;
+  margin: 1rem 0 1rem 0;
+}
+@media (min-width: 38rem) {
+  #portfolio-item header h1 {
+    font-size: 5.5rem;
+  }
+}
+#portfolio-item header .portfolio-item__details {
+  align-items: flex-end;
+  margin-top: 6rem;
+}
+#portfolio-item header .portfolio-item__meta-data h3 {
+  font: 600 1rem/150% "Montserrat", sans-serif;
+  letter-spacing: 0.035rem;
+  text-transform: uppercase;
+  margin: 1.5rem 0 0.5rem 0;
+}
+#portfolio-item header .portfolio-item__meta-data h3:first-of-type {
+  margin-top: 0;
+}
+#portfolio-item header .portfolio-item__description p {
+  margin-bottom: 1.5rem;
+}
+#portfolio-item header img {
+  max-width: 100%;
+  max-height: 100%;
+}
+#portfolio-item main h2 {
+  font: 600 1rem/150% "Montserrat", sans-serif;
+  letter-spacing: 0.035rem;
+  text-transform: uppercase;
+  margin: 1.5rem 0 0.5rem 0;
+  color: rgb(255, 162, 10);
+}
+#portfolio-item main .row {
+  margin-top: 6.5rem;
+  margin-bottom: 6.5rem;
+}/*# sourceMappingURL=main.css.map */
